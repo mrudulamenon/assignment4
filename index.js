@@ -94,11 +94,18 @@ function swapstring() {
 let arraytosqare = document.getElementById("arraytosqare");
 let sumofsqaresdisplay = document.getElementById("sumofsqaresdisplay");
 function sumofsqares() {
-    let arrayvalue = arraytosqare.value;
-    let result = Math.hypot(...arrayvalue.split` `) ** 2;
-    //...arrayvalue.split`,` accept input and split to array using , as delimiter. 
-    // Then to math.hypot function which return squareroot of sum of sqares of its arguments.    
-    sumofsqaresdisplay.innerHTML = parseInt(result);
+    let arrsqr,opsum;
+    arrsqr=arraytosqare.value.split` `;
+    opsum=0;
+    for(var i=0;i<arrsqr.length;i++){
+        opsum+=(arrsqr[i]*arrsqr[i]);
+    }
+    sumofsqaresdisplay.innerHTML="The sum of squares of array elemets is: <strong>"+opsum+"</strong";
+    // let arrayvalue = arraytosqare.value;
+    // let result = Math.hypot(...arrayvalue.split` `) ** 2;
+    // //...arrayvalue.split`,` accept input and split to array using , as delimiter. 
+    // // Then to math.hypot function which return squareroot of sum of sqares of its arguments.    
+    // sumofsqaresdisplay.innerHTML = parseInt(result);    
 }
 //FIFTH QUESTION
 let oddorevendisplay = document.getElementById("oddorevendisplay");
@@ -117,7 +124,7 @@ let truncatestringdisplay = document.getElementById("truncatestringdisplay");
 function truncatestring() {
     let stringtrunc = stringtotruncate.value;
     let numtrunc = truncatenumber.value;
-    truncatestringdisplay.innerHTML = "The truncated string is: " + stringtrunc.substring(0, numtrunc);
+    truncatestringdisplay.innerHTML = "The truncated string is: <strong>" + stringtrunc.substring(0, numtrunc)+"</strong>";
 }
 //SEVENTH QUESTION
 let firstnumber = document.getElementById("firstnumber");
