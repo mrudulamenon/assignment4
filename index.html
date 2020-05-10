@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Class Excercises</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="jslogo.png">
+</head>
+
+<body>
+    <h1>Javascript Assignment</h1>
+    <ol>
+        <li>Javascript Function to get an Array, Read first element and print prime or not.</li>
+        <li>Javascript program to find the most frequent item of an array.</li>
+        <li>Javascript program which accept a string as input and swap the case of each character.</li>
+        <li>Javascript program to find the sum of squares of the elements of an array.</li>
+        <li>Javascript for loop that will iterate from 0 to 15.
+            For each iteration, check if the current number is odd or even,
+            and display the message to the screen as odd or even.</li>
+        <li>Javascript function to truncate a string if it is longer than the specified number of characters.</li>
+        <li>Javascript program that accept two integers and display the larger using findLarge() function.</li>
+        <li>Javascript program using for ..in to read the objects from an array entered by a user and to arrange it in
+            alphabetial order.</li>
+        <li>Javascript program to print the letters of the word "Javascript" as below in each line using for ..of. <br>J
+            <br>Ja <br>Jav <br>... <br>Javascript</li>
+        <li>Javascript program to construct the following pattern, using a nested for loop. <br>* <br>** <br>***
+            <br>**** <br></li>
+    </ol>
+
+
+    <div id="Prime">
+        <h3>1. Prime or Not</h3>
+        <input type="text" id="arraytoprime" placeholder="Enter array seperated by space">
+        <button onclick="primeornot()">Check For Prime</button>
+        <label for="isprime" id="isprime"></label><br>
+    </div>
+    <div id="frequentitem">
+        <h3>2. Most frequent Item of an Array</h3>
+        <input type="text" id="arraytofreqitem" placeholder="Enter array seperated by space">
+        <button onclick="frequentitem()">Find Most Frequent Item</button>
+        <label for="frequentitem" id="frequentitemdisplay"></label><br>
+    </div>
+    <div id="swapcase">
+        <h3>3. Swap case of the string</h3>
+        <input type="text" id="stringtoswap" placeholder="Enter string to swap the case">
+        <button onclick="swapstring()">Swap case of String</button>
+        <label for="swapstring" id="swapstringdisplay"></label><br>
+    </div>
+    <div id="sumofsquares">
+        <h3>4.Sum of Squares of elements of Array</h3>
+        <input type="text" id="arraytosqare" placeholder="Enter array seperated by space">
+        <button onclick="sumofsqares()">Sum of Sqares</button>
+        <label for="sumofsqares" id="sumofsqaresdisplay"></label><br>
+    </div>
+    <div id="oddoreven">
+        <h3>5. Loop 0 to 15 and Write Odd or Even</h3>
+        <button onclick="oddoreven()">Odd or Even</button>
+        <label for="oddoreven" id="oddorevendisplay"></label><br>
+    </div>
+    <div id="truncatestring">
+        <h3>6. Truncate string if longer than specified number</h3>
+        <input type="text" id="stringtotruncate" placeholder="Enter string to be truncated">
+        <input type="number" id="truncatenumber" placeholder="Enter number allowed in string">
+        <button onclick="truncatestring()">Truncate String</button>
+        <label for="truncatestring" id="truncatestringdisplay"></label><br>
+    </div>
+    <div id="findlarger">
+        <h3>7. Enter two number to print larger</h3>
+        <input type="number" id="firstnumber" placeholder="Enter First Number">
+        <input type="number" id="secondnumber" placeholder="Enter Second Number">
+        <button onclick="findLarge()">Find Larger</button>
+        <label for="larger number" id="largernumberdisplay"></label><br>
+    </div>    
+    <div id="sortarray">
+        <h3>8. Enter objects to arrange in alphabetical order using for ..in</h3>
+        <input type="text" id="arraytosort" placeholder="Enter array seperated by space">
+        <button onclick="sortarray()">Sort Array</button>
+        <label for="sorted array" id="sortarraydisplay"></label><br>
+    </div>
+    <div id="displayjavascript">
+        <h3>9. Display "Javascript" in specified manner using for ..of</h3>        
+        <button onclick="javaarrange()">Display Javascript</button>
+        <label for="javscript display" id="javascriptdisplay"></label><br>
+    </div>
+    <div id="displaystar">
+        <h3>10. Display "*" in specified manner using nested for</h3>        
+        <button onclick="stararrange()">Display Javascript</button>
+        <label for="star display" id="stardisplay"></label><br>
+    </div>
+
+
+
+
+    </ol>
+    <script src="index.js"></script>
+</body>
+
+</html>

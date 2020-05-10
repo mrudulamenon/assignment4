@@ -1,0 +1,22 @@
+body{
+    margin: 10px;
+    padding: 10px;
+    background-color: blanchedalmond;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    line-height: 1.5em;    
+}
+button{
+    width: auto;
+    height: 30px;
+    color: brown;
+    font-weight: bold;
+    background-image: linear-gradient(rgb(236, 190, 190), rgb(236, 193, 128));
+}
+input{
+    height: 25px;
+    width:200px;
+}
+#displayarray{
+    color: brown;
+    font-size: large;
+}
