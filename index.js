@@ -131,12 +131,13 @@ let firstnumber = document.getElementById("firstnumber");
 let secondnumber = document.getElementById("secondnumber");
 let largernumberdisplay = document.getElementById("largernumberdisplay");
 function findLarge() {
-    let fnum = firstnumber.value;    
-    let snum = secondnumber.value;
-    console.log(fnum,snum);
+    let fnum = Number(firstnumber.value);    
+    let snum = Number(secondnumber.value);
+    //console.log(fnum,snum);
     let oplarge = "";
     if (fnum == snum) { oplarge += "Both Numbers are same"; }
     else {
+        //console.log(fnum,snum,fnum<snum);
         let op=(fnum > snum) ? fnum : snum;
         oplarge += "The larger number is: <strong>" + op + "</strong";
     }
