@@ -72,20 +72,66 @@
         <input type="number" id="secondnumber" placeholder="Enter Second Number">
         <button onclick="findLarge()">Find Larger</button>
         <label for="larger number" id="largernumberdisplay"></label><br>
-    </div>    
+    </div>
     <div id="sortarray">
         <h3>8. Enter objects to arrange in alphabetical order using for ..in</h3>
+        <input type="text" id="fname" placeholder="Enter First Name">
+        <input type="text" id="lname" placeholder="Enter Last name">
+        <input type="number" id="classid" placeholder="Enter Class (in number only)">
+        <input type="text" id="school" placeholder="Enter School">
+        <button id="inputobj" onclick="addobj()">Add Object Data</button><br><br>
+        <p class="arrobjdisplay">
+            Entered Array is:-
+        </p>
+        <table class="arrobjdisplay">
+            <thead>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Class</th>
+                <th>School</th>
+            </thead>
+            <tbody id="tbinput">
+
+            </tbody>
+        </table>
+
+
+        <select name="sortproperty" id="sortproperty">
+            <option value="fname" selected>First Name</option>
+            <option value="lname">Last Name</option>
+            <option value="classid">Class</option>
+            <option value="school">School</option>
+        </select>
+        <button id="sortarrobj" onclick="sortarrobj()">Sort Array Object</button>
+        <p class="sortarrobjdisplay">
+            Sorted Array is:-
+        <table class="sortarrobjdisplay">
+            <thead>
+                <tr>
+                    <th id='thfname'>First Name</th>
+                    <th id='thlname'>Last Name</th>
+                    <th id='thclssid'>Class</th>
+                    <th id='thschool'>School</th>
+                </tr>
+            </thead>
+            <tbody id="tbsorted">
+
+            </tbody>
+        </table>
+        </p>
+        <br><br>
+        Sorting simple array.
         <input type="text" id="arraytosort" placeholder="Enter array seperated by space">
         <button onclick="sortarray()">Sort Array</button>
         <label for="sorted array" id="sortarraydisplay"></label><br>
     </div>
     <div id="displayjavascript">
-        <h3>9. Display "Javascript" in specified manner using for ..of</h3>        
+        <h3>9. Display "Javascript" in specified manner using for ..of</h3>
         <button onclick="javaarrange()">Display Javascript</button>
         <label for="javscript display" id="javascriptdisplay"></label><br>
     </div>
     <div id="displaystar">
-        <h3>10. Display "*" in specified manner using nested for</h3>        
+        <h3>10. Display "*" in specified manner using nested for</h3>
         <button onclick="stararrange()">Display Star(*)</button>
         <label for="star display" id="stardisplay"></label><br>
     </div>

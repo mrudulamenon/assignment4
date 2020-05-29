@@ -20,3 +20,31 @@ input{
     color: brown;
     font-size: large;
 }
+table{
+    border-collapse: collapse;
+
+}
+th, td{
+    border: 1px solid brown;
+    padding: 5px;
+    color: brown;
+}
+th{
+    text-transform: uppercase;
+    font-weight: bold;
+    background-color: rgb(252, 191, 147);
+}
+tr:nth-child(even){
+    background-color: rgb(252, 191, 147);
+}
+th:hover{
+    background-color: brown;
+    color: burlywood;
+}
+.arrobjdisplay{
+    display: none;
+    /* visibility: hidden; */
+}
+.sortarrobjdisplay{
+    display: none;
+}

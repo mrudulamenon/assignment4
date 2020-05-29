@@ -94,13 +94,13 @@ function swapstring() {
 let arraytosqare = document.getElementById("arraytosqare");
 let sumofsqaresdisplay = document.getElementById("sumofsqaresdisplay");
 function sumofsqares() {
-    let arrsqr,opsum;
-    arrsqr=arraytosqare.value.split` `;
-    opsum=0;
-    for(var i=0;i<arrsqr.length;i++){
-        opsum+=(arrsqr[i]*arrsqr[i]);
+    let arrsqr, opsum;
+    arrsqr = arraytosqare.value.split` `;
+    opsum = 0;
+    for (var i = 0; i < arrsqr.length; i++) {
+        opsum += (arrsqr[i] * arrsqr[i]);
     }
-    sumofsqaresdisplay.innerHTML="The sum of squares of array elemets is: <strong>"+opsum+"</strong";
+    sumofsqaresdisplay.innerHTML = "The sum of squares of array elemets is: <strong>" + opsum + "</strong";
     // let arrayvalue = arraytosqare.value;
     // let result = Math.hypot(...arrayvalue.split` `) ** 2;
     // //...arrayvalue.split`,` accept input and split to array using , as delimiter. 
@@ -124,21 +124,21 @@ let truncatestringdisplay = document.getElementById("truncatestringdisplay");
 function truncatestring() {
     let stringtrunc = stringtotruncate.value;
     let numtrunc = truncatenumber.value;
-    truncatestringdisplay.innerHTML = "The truncated string is: <strong>" + stringtrunc.substring(0, numtrunc)+"</strong>";
+    truncatestringdisplay.innerHTML = "The truncated string is: <strong>" + stringtrunc.substring(0, numtrunc) + "</strong>";
 }
 //SEVENTH QUESTION
 let firstnumber = document.getElementById("firstnumber");
 let secondnumber = document.getElementById("secondnumber");
 let largernumberdisplay = document.getElementById("largernumberdisplay");
 function findLarge() {
-    let fnum = Number(firstnumber.value);    
+    let fnum = Number(firstnumber.value);
     let snum = Number(secondnumber.value);
     //console.log(fnum,snum);
     let oplarge = "";
     if (fnum == snum) { oplarge += "Both Numbers are same"; }
     else {
         //console.log(fnum,snum,fnum<snum);
-        let op=(fnum > snum) ? fnum : snum;
+        let op = (fnum > snum) ? fnum : snum;
         oplarge += "The larger number is: <strong>" + op + "</strong";
     }
     largernumberdisplay.innerHTML = oplarge;
@@ -150,26 +150,112 @@ function sortarray() {
     let arrsort = arraytosort.value.split` `;
     let newarr = arrsort;
     newarr.sort();
-    let opsort="Sorted Array is: ";
-    for(let x in newarr){
-        opsort+=newarr[x]+",";
+    let opsort = "Sorted Array is: ";
+    for (let x in newarr) {
+        opsort += newarr[x] + ",";
     }
     sortarraydisplay.innerHTML = opsort;
-//
-// objArray.sort(function(a, b) {
-//     var textA = a.DepartmentName.toUpperCase();
-//     var textB = b.DepartmentName.toUpperCase();
-//     return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
-// });
+    //
 }
+let fname = document.getElementById("fname");
+let lname = document.getElementById("lname");
+let classid = document.getElementById("classid");
+let school = document.getElementById("school");
+let sortproperty = document.querySelectorAll("#sortproperty");
+let arrobjdisplay = document.querySelectorAll(".arrobjdisplay");
+let sortarrobjdisplay = document.querySelectorAll(".sortarrobjdisplay");
+let tbinput = document.getElementById("tbinput");
+let tbsorted = document.getElementById("tbsorted");
+let thfname = document.getElementById("thfname");
+let thlname = document.getElementById("thlname");
+let thclassid = document.getElementById("thclassid");
+let thschool = document.getElementById("thschool");
+
+
+let objarr = [];
+let sortdirection = true;
+function addobj() {
+    let obj = {};
+    obj.fname = fname.value;
+    obj.lname = lname.value;
+    obj.classid = Number(classid.value);
+    obj.school = school.value;
+    objarr.push(obj);
+    console.log(objarr);
+    arrobjdisplay[0].style.display = "block";
+    arrobjdisplay[1].style.display = "block";
+    tbinput.innerHTML = loaddata(objarr);
+}
+// objarr = [
+//     { classid: 5, fname: "Asd", lname: "asd", school: "gfg" },
+//     { classid: 8, fname: "Fsd", lname: "ere", school: "tyt" },
+//     { classid: 8, fname: "Fsd", lname: "ere", school: "tyt" },
+//     { classid: 9, fname: "Esd", lname: "sas", school: "dss" }
+// ];
+// tbinput.innerHTML = loaddata(objarr);
+// thfname.addEventListener("onclick", sortarrobj());
+
+function loaddata(objarr1) {
+
+    let tabledata = "";
+    // console.log(objarr1);
+    for (var d of objarr1) {
+        tabledata += `<tr><td>${d.fname}</td><td>${d.lname}</td><td>${d.classid}</td><td>${d.school}</td></tr>`;
+    }
+    return tabledata;
+}
+function sortarrobj() {
+    sortobjarr = objarr;
+    let sortitem = sortproperty.value;
+    // console.log(sortitem);
+    // console.log(typeof (sortobjarr[0].classid));
+    switch (sortitem) {
+        case "classid":
+            sortobjarr.sort((a, b) => {
+                return sortdirection ? a[sortitem] - b[sortitem] : b[sortitem] - a[sortitem];
+            });
+            break;
+        case "fname":
+        case "lname":
+        case "school":
+            sortobjarr.sort(function (a, b) {
+                var textA = a[sortitem].toUpperCase();
+                var textB = b[sortitem].toUpperCase();
+                return (textA < textB) ? -1 : (textA > textB) ? 1 : 0;
+            });
+            break;
+    }
+    sortarrobjdisplay[0].style.display = "block";
+    sortarrobjdisplay[1].style.display = "block";
+    tbsorted.innerHTML = loaddata(sortobjarr);
+    //sortobjarr=sortobjarr.sort(dynamicSort(sortitem));
+}
+// function dynamicSort(property) {
+// var sortOrder = 1;
+// if(property[0] === "-") {
+//     sortOrder = -1;
+//     property = property.substr(1);
+// }
+// return function (a,b) {
+/* next line works with strings and numbers, 
+ * and you may want to customize it to your needs
+ */
+// var result = (a[property] < b[property]) ? -1 : (a[property] > b[property]) ? 1 : 0;
+// console.log(result);
+// return result;
+// return result * sortOrder;
+// }
+
+// }
+
 //NINTH QUESTION
 let javascriptdisplay = document.getElementById("javascriptdisplay");
-function javaarrange(){
-    let strj ="Javascript";
-    let opjava = "" ;
-    let i=0;
-    for(i=0;i<11;i++){
-        opjava+=strj.substring(0,i)+"<br>";
+function javaarrange() {
+    let strj = "Javascript";
+    let opjava = "";
+    let i = 0;
+    for (i = 0; i < 11; i++) {
+        opjava += strj.substring(0, i) + "<br>";
     }
     // let arrstr = strj.split(""); 
     // console.log(arrstr)  ;
@@ -183,18 +269,18 @@ function javaarrange(){
     //     opjava+="<br>";
     //     // arrstr.findIndex(elas);
     // }
-    javascriptdisplay.innerHTML=opjava;
+    javascriptdisplay.innerHTML = opjava;
 
 }
 //TENTH QUESTION
 let stardisplay = document.getElementById("stardisplay");
-function stararrange(){
-    let opstar="<br>";
-    for(var i=1;i<=10;i++){
-        for(var j=1;j<=i;j++){
-            opstar+="*  ";
+function stararrange() {
+    let opstar = "<br>";
+    for (var i = 1; i <= 10; i++) {
+        for (var j = 1; j <= i; j++) {
+            opstar += "*  ";
         }
-        opstar+="<br>";
+        opstar += "<br>";
     }
-    stardisplay.innerHTML=opstar;
+    stardisplay.innerHTML = opstar;
 }
